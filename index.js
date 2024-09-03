@@ -36,8 +36,8 @@ pool.connect((err, client, release) => {
   } else {
     console.log('Conectado a la base de datos PostgreSQL');
   }
-  release();
-});
+  release(); 
+}); 
 
 /*
   A continuación, se crean varias rutas HTTP (GET y POST) que manejarán diferentes endpoints de la aplicación.
