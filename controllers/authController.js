@@ -13,7 +13,7 @@ const login = async (req, res) => {
     if (user) {
       const isMatch = await bcrypt.compare(password, user.password_hash); // Busca un usuario que coincida con el 'username' y 'password' proporcionados
       if (isMatch) { // si coincide...
-        const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, { expiresIn: '4h' });
+        const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, { expiresIn: '1h' });
         /*
           + Crea un token JWT que incluye el 'id' del usuario;
           + 'secret_key' es una cadena secreta utilizada para firmar el token; (En producción, esta clave debe ser segura y no estar expuesta en el código fuente.)

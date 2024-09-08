@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
@@ -10,6 +11,9 @@ const userRoutes = require('./routes/user');
 // Crear instancia de Express
 const app = express(); // Crea una instancia de una aplicación Express
 const port = 3000; // Define el puerto en el que el servidor escuchará las solicitudes. Aquí se usa el puerto 3000
+
+// Habilitar CORS para todas las rutas
+app.use(cors());
 
 // Configura 'body-parser' como middleware para que la aplicación pueda manejar solicitudes con cuerpos en formato JSON
 app.use(bodyParser.json()); // Esto permite acceder a los datos enviados en el cuerpo de las solicitudes a través de 'req.body'
