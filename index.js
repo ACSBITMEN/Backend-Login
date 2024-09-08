@@ -9,7 +9,7 @@ const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 
 // Crear instancia de Express
-const app = express(); // Crea una instancia de una aplicación Express
+const app = express(); // Crea una instancia de una aplicación Express.
 const port = 3000; // Define el puerto en el que el servidor escuchará las solicitudes. Aquí se usa el puerto 3000
 
 // Habilitar CORS para todas las rutas

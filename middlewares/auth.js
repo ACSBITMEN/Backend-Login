@@ -21,7 +21,7 @@ const verifyToken = (req, res, next) => {
 };
 
 
-// Función middleware para verificar si el usuario tiene el rol requerido
+// Función middleware para verificar si el usuario tiene el rol requerido aaaa
 const verifyRole = (requiredRole) => {
   return async (req, res, next) => {
     try {
