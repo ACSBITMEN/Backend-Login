@@ -4,31 +4,57 @@ Este es un proyecto de backend para un sistema de autenticación y gestión de u
 
 Este backend proporciona varios endpoints para autenticación y operaciones CRUD de usuarios:
 
-### API / Rutas de authenticación
+### API "/auth" Rutas de authenticación 
 
-POST /auth/login: Iniciar sesión y obtener un token
+- **POST /auth/login**: Iniciar sesión y obtener un token:
     ```bash
     {
-      "username": "exampleuser",
-      "password": "password123"
+    "username": "exampleuser",
+    "password": "password123"
     }
     ```
 
-### API / Rutas de Usuarios
+### API "/user" Rutas de Usuarios
 
-GET /users: Obtener todos los usuarios (solo administradores).
-POST /users: Crear un nuevo usuario (solo administradores).
-PUT /users/
-: Actualizar un usuario por ID (solo administradores).
-DELETE /users/
-: Eliminar un usuario por ID (solo administradores).
+Nota: Solo los usuarios autenticados con el rol de administrador (rol_id = 1) pueden acceder a estas rutas.
+
+- **GET /user**: Obtener todos los usuarios.
+- **POST /user**: Crear un nuevo usuario. 
+Ejemplo JSON
+    ```bash
+    {
+      "username": "UserPrueba",
+      "first_name": "User",
+      "last_name": "Prueba",
+      "password": "prueba01",
+      "email": "testuser@example.com",
+      "role_id": 2
+    }
+    ```
+
+- **PUT /user/#ID**: Actualizar un usuario por ID.
+- **DELETE /user/#ID**: Eliminar un usuario por ID.
+
 
 ## Estructura del Proyecto
-
 El proyecto está organizado de la siguiente manera:
 
 (IMG_1)
 
+
+La estructura de carpetas y archivos está diseñada para seguir las mejores prácticas en el desarrollo de aplicaciones backend con Node.js y Express, promoviendo la separación de responsabilidades y la organización modular del código. 
+
+Cada carpeta tiene una función específica: 
+
+- **config/**: contiene la configuración general de la aplicación, como la configuración de la base de datos.
+- **controllers/**: maneja la lógica de negocio y las operaciones específicas para diferentes rutas, separando las funciones de autenticación (authController.js) y de gestión de usuarios (userController.js). 
+- **middlewares/**: se encarga de la lógica intermedia, como la autenticación 
+(auth.js), que se ejecuta antes de acceder a las rutas protegidas. 
+- **models/**: Define la estructura de la base de datos y los modelos utilizados para interactuar con ella.
+- **routes/**: Define las rutas de la API y asigna los controladores correspondientes.
+- **utils/**: Contiene funciones de utilidad reutilizables, como la generación de claves y el hash de contraseñas, ayudando a evitar la duplicación de código.
+
+Esta estructura hace que el código sea más mantenible y escalable, ya que permite agregar nuevas funcionalidades sin afectar la organización general del proyecto.
 
 ## Dependencias
 
