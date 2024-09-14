@@ -39,7 +39,7 @@ Ejemplo JSON
 ## Estructura del Proyecto
 El proyecto está organizado de la siguiente manera:
 
-(IMG_1)
+![](https://raw.githubusercontent.com/ACSBITMEN/Login-Backend/main/assets/Backend-Estructure.jpg)
 
 
 La estructura de carpetas y archivos está diseñada para seguir las mejores prácticas en el desarrollo de aplicaciones backend con Node.js y Express, promoviendo la separación de responsabilidades y la organización modular del código. 
